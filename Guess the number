@@ -1,0 +1,21 @@
+print("Let's guess the number")
+import random   #calling random library
+
+def check_digit(x):
+    while x.isdigit() == False:
+        print("Please enter a digit between 0 and 100\n")
+        x = input()
+    return int(x)  #python inputs are automatically strings, have to convert to int, only need to call function once
+
+guess_num = random.randint(0,101) 
+print("Write a whole number between 0 and 100\n")
+user_num = check_digit(input())
+
+while user_num != guess_num:
+    if user_num > guess_num:
+        print("You are too high")
+    if user_num < guess_num:
+        print("You are too low")
+    user_num = check_digit(input())
+
+print("You guessed the number!")
